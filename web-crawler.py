@@ -48,7 +48,9 @@ with webdriver as driver:
     password_container.send_keys(password)
     time.sleep(2)
     driver.find_element_by_class_name('L3NKy').click()
-    time.sleep(5)
+    element = WebDriverWait(driver, 50).until(
+        EC.presence_of_element_located((By.CLASS_NAME, 'ABCxa'))
+    )
 
     driver.get(url)
 
@@ -58,7 +60,15 @@ with webdriver as driver:
 
     page_soup = soup(driver.page_source, "html.parser")
 
+    total_posts = page_soup.find("span", {"class": "g47SY"}).text
+
     image_containers = page_soup.findAll("div", {"class": "KL4Bh"})
+
+    # while len(image_containers) != int(total_posts):
+    #     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    #     image_containers = page_soup.findAll("div", {"class": "KL4Bh"})
+    #     print('Still Scrolling...')
+
     path = f'C:\\{toCrawl}\\'
     try:
         os.mkdir(path)
