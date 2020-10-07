@@ -8,10 +8,15 @@ from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup as soup
 import time
 import wget
+from getpass import getpass
 import os
 
 username = input("Enter Your Instagram username: ")
-password = input("Enter Your Password: ")
+try:
+    password = getpass(prompt="Enter your Instagram Password: ")
+except Exception as error:
+    print('ERROR: ', error)
+    os.exit(1)
 toCrawl = input("Enter Target Username: ")
 url = f'https://www.instagram.com/{toCrawl}/'
 login_url = 'https://www.instagram.com/accounts/login/'
