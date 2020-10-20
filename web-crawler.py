@@ -22,7 +22,10 @@ webdriver = webdriver.Chrome(
 )
 
 
-def begin_crawling(username, password, toCrawl):
+def begin_crawling():
+    username = str(e1.get())
+    password = str(e2.get())
+    toCrawl = str(e3.get())
     # username = input("Enter Your Instagram username: ")
     # try:
     #     password = getpass(prompt="Enter your Instagram Password: ")
@@ -147,12 +150,7 @@ e1.grid(row=0, column=1, pady=2)
 e2.grid(row=1, column=1, pady=2)
 e3.grid(row=3, column=1, pady=2)
 
-username = str(e1.get())
-password = str(e2.get())
-target = str(e3.get())
-
-
-B = tkinter.Button(text="Start Downloading", command=lambda: begin_crawling(str(username), str(password), str(target)))
+B = tkinter.Button(text="Start Downloading", command=begin_crawling)
 
 B.grid(row=5, column=0, sticky=W, pady=2)
 
