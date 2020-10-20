@@ -1,0 +1,6 @@
+
+# Default ignored files
+/chromedriver.exe
+/venv
+/.idea
+/debug.log
