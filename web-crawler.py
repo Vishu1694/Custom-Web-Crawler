@@ -145,6 +145,9 @@ e1 = Entry()
 e2 = Entry()
 e3 = Entry()
 
+
+
+e2.config(show="*");
 # this will arrange entry widgets
 e1.grid(row=0, column=1, pady=2)
 e2.grid(row=1, column=1, pady=2)
