@@ -1,12 +1,13 @@
 from tkinter import *
-
+# import webcrawler
+import os
 
 root = Tk()
 root.title("CUSTOM WEB CRAWLER")
 # root.geometry('510x400')
 root.configure(bg="#282828")
-p1 = PhotoImage(file = 'C:/Users/HP/OneDrive/Documents/webcrawler.png')
-root.iconphoto(False, p1) 
+# p1 = PhotoImage(file = 'C:/Users/HP/OneDrive/Documents/webcrawler.png')
+# root.iconphoto(False, p1)
 # scrollbar = Scrollbar(root)
 # scrollbar.grid( sticky=E)
 
@@ -15,7 +16,7 @@ frames = []
 widgets = []
 var1 = IntVar()
 var2 = IntVar()
-var3=  IntVar()
+var3 = IntVar()
 
 def createwidgets():
 
@@ -49,6 +50,9 @@ def createwidgets():
     widget4.grid(pady=5,row=4,column=1)
 
 
+def open_insta():
+    os.system('python webcrawler.py')
+
 
 frame = LabelFrame(root,bg="#282828",bd=1,relief=SUNKEN)
 frame.grid(columnspan=4,padx=10,pady=10)
@@ -60,10 +64,10 @@ label.grid(row=0,pady=10)
 e=Entry(frame,width =73,borderwidth=3)
 e.grid(row=1,padx=20,pady=10)
 
-button1 = Button(root,text="Default Search",bg="#FFAE42")
-button2 = Button(root,text="Amazon",bg="#FFAE42")
-button3 = Button(root,text="Flipkart",bg="#FFAE42")
-button4 = Button(root,text="Instagram",bg="#FFAE42")
+button1 = Button(root, text="Default Search", bg="#FFAE42")
+button2 = Button(root, text="Amazon", bg="#FFAE42")
+button3 = Button(root, text="Flipkart", bg="#FFAE42")
+button4 = Button(root, text="Instagram", bg="#FFAE42", command=open_insta)
 
 
 button1.grid(row=2,column=0,pady=30,padx=5)
