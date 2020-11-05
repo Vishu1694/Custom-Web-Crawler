@@ -1,6 +1,13 @@
 from tkinter import *
 import tkinter
 from PIL import ImageTk, Image
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from bs4 import BeautifulSoup as soup
+import time
+import csv
+
+
 crawler_window = tkinter.Tk()
 
 # CheckVar1 = IntVar()
@@ -19,8 +26,40 @@ label.grid(row=1,column=0,pady=5)
 entry1 = Entry(crawler_window)
 entry1.grid(row=1,column=1,pady=5)
 
+def begin():
+    link = f'https://amazon.in/s?k={entry1.get()}'
+    chrome_driver_path = 'chromedriver'
 
-btn = Button(text="Begin Scraping!",bg='#D2EFA0')
+    global webdriver
+    chrome_options = Options()
+    # chrome_options.add_argument('--headless')
+    webdriver = webdriver.Chrome(
+        executable_path=chrome_driver_path, options=chrome_options
+    )
+
+    with webdriver as driver:
+        driver.get(link)
+        time.sleep(2)
+        page_soup = soup(driver.page_source, "html.parser")
+        product_name = page_soup.findAll("span", {"class": "a-size-base-plus a-color-base a-text-normal"})
+        product_price = page_soup.findAll("span", {"class": "a-price-whole"})
+
+        fields = ['Product Name', 'Price']
+        rows = []
+        for i in range(0, len(product_name)):
+            temp_list = []
+            temp_list.append(product_name[i].text)
+            temp_list.append(product_price[i].text)
+            rows.append(temp_list)
+
+        with open("amazon-data.csv", 'w', encoding='utf-8') as csvfile:
+            csvwriter = csv.writer(csvfile)
+            csvwriter.writerow(fields)
+            csvwriter.writerows(rows)
+        print(rows)
+
+
+btn = Button(text="Begin Scraping!",bg='#D2EFA0', command=begin)
 btn.grid(row=3,columnspan=2,pady=5)
 
 
