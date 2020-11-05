@@ -16,9 +16,15 @@ var2 = IntVar()
 var3 = IntVar()
 
 
-def open_insta():
-    os.system('python web-crawler.py')
-
+def open_app(app_no):
+    if app_no == 0:
+        os.system('python web-crawler.py')
+    elif app_no == 1:
+        os.system('python flipkart.py')
+    elif app_no == 2:
+        os.system('python amazon.py')
+    else:
+        pass
 
 photo1 = PhotoImage(file = r"flipkart.png").subsample(10,10)
 photo2 = PhotoImage(file = r"amazon.png").subsample(10,10)
@@ -33,10 +39,10 @@ C.grid()
 
 l1 = Label(bg="#EFAEA0", fg='#000', text='Some Pre-made Crawlers:')
 l1.grid(row=1, column=1, sticky=W)
-start_insta = Button(text="Instagram Crawler", bg='#FDF5E6', command=open_insta, border=3,image = photo3, compound=LEFT)
-start_flipkart = Button(text=' Flipkart Crawler', bg='#FDF5E6', border=3,image = photo1, compound=LEFT)
+start_insta = Button(text="Instagram Crawler", bg='#FDF5E6', command=lambda: open_app(0), border=3,image = photo3, compound=LEFT)
+start_flipkart = Button(text=' Flipkart Crawler', bg='#FDF5E6', border=3,image = photo1, compound=LEFT, command=lambda: open_app(1))
 start_flipkart.image = photo1
-start_amazon = Button(text=' Amazon Crawler', bg='#FDF5E6', border=3,image = photo2, compound=LEFT)
+start_amazon = Button(text=' Amazon Crawler', bg='#FDF5E6', border=3,image = photo2, compound=LEFT, command=lambda: open_app(2))
 
 start_insta.grid(row=2, column=1, pady=12,padx=12)
 start_flipkart.grid(row=2, column=2, pady=12,padx=12)
