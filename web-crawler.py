@@ -146,13 +146,10 @@ def start_crawler():
     l2 = Label(text = "Password:")
     l3 = Label(text="Target Username: ")
 
-<<<<<<< HEAD:web-crawler.py
     l1.grid(row=1, column=0, sticky=W, pady=2)
     l2.grid(row=2, column=0, sticky=W, pady=2)
-=======
-    l1.grid(row=0, column=0, sticky=W, pady=2)
-    l2.grid(row=1, column=0, sticky=W, pady=2)
->>>>>>> parent of 18494f6... Fixed few issues:webcrawler.py
+    # l1.grid(row=0, column=0, sticky=W, pady=2)
+    # l2.grid(row=1, column=0, sticky=W, pady=2)
     l3.grid(row=3, column=0, sticky=W, pady=2)
 
     e1 = Entry()

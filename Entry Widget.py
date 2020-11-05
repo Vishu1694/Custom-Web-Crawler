@@ -8,11 +8,8 @@ root.geometry('450x400')
 root.configure(bg="#f7f7f7")
 p1 = PhotoImage(file='icon.png')
 root.iconphoto(False, p1)
-<<<<<<< HEAD
 root.attributes("-transparentcolor", "red")
-=======
 # root.attributes("-transparentcolor", "red")
->>>>>>> parent of 05a65e7... My changes after Karan
 # scrollbar = Scrollbar(root)
 # scrollbar.grid( sticky=E)
 
@@ -28,25 +25,10 @@ def open_insta():
     os.system('python web-crawler.py')
 
 
-<<<<<<< HEAD
-photo1 = PhotoImage(file = r"flipkart.png").subsample(10,10)
-photo2 = PhotoImage(file = r"amazon.png").subsample(10,10)
-photo3 = PhotoImage(file = r"instagram.png").subsample(10,10)
 
-# photo1 = PhotoImage(file = r"C:/Users/HP/Downloads/Custom-Web-Crawler-master/flipkart.png").subsample(10,10)
-# photo2 = PhotoImage(file = r"C:/Users/HP/Downloads/Custom-Web-Crawler-master/amazon.png").subsample(10,10)
-# photo3 = PhotoImage(file = r"C:/Users/HP/Downloads/Custom-Web-Crawler-master/instagram.png").subsample(10,10)
-=======
-<<<<<<< HEAD
 photo1 = PhotoImage(file="flipkart.png").subsample(10,10)
 photo2 = PhotoImage(file="amazon.png").subsample(10,10)
 photo3 = PhotoImage(file="instagram.png").subsample(10,10)
-=======
-photo1 = PhotoImage(file = r"flipkart.png").subsample(10,10)
-photo2 = PhotoImage(file = r"amazon.png").subsample(10,10)
-photo3 = PhotoImage(file = r"instagram.png").subsample(10,10)
->>>>>>> 2dd72a2f72ce4433413a92edb20b59fade6c6e72
->>>>>>> parent of 05a65e7... My changes after Karan
 
 
 C = Canvas(0, bg="blue", height=0, width=0)
