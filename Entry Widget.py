@@ -91,33 +91,16 @@ e.grid(row=1, padx=20, pady=10)
 pos = 0
 frame_arr = []
 
+# Demo Inputs
+#
+# URL :  https://flipkart.com/search?q=shoes
+# Select ALL a with class : _2mylT6
+# Select ALL div with class : _1vC4OE
 
-# https://flipkart.com/search?q=shoes
-# _2mylT6
-# _1vC4OE
-
-# print('Link : ', end='')
-# print(e.get())
-# print('Saving data as csv: ', end='')
-# print(var1.get())
-# print('Selected: ', end='')
-# for i in range(0, len(frame_arr)):
-#     if var2_arr[i].get() == 1:
-#         print('FIRST', end='')
-#         print(first_how_entry_arr[i].get())
-#     elif var2_arr[i].get() == 2:
-#         print('all')
-#     print(element_arr[i].get())
-#     print('with: ', end='')
-#     if var3_arr[i].get() == 1:
-#         print('class: ', end='')
-#     elif var3_arr[i].get() == 2:
-#         print('id: ', end='')
-#     print(class_id_entry_arr[i].get())
 
 def start():
     # f = open("scraped-data.txt", "w")
-    if var1 == 1:
+    if var1.get() == 1:
         f = open("scraped-data.txt", "a")
         f.write("\n\n\n <====== NEW PROJECT ======> \n\n\n")
     global webdriver
