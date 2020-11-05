@@ -152,13 +152,9 @@ def start_crawler():
     l2 = Label(text = "Password:")
     l3 = Label(text="Target Username: ")
 
-<<<<<<< HEAD
-    l1.grid(row=1, column=1, sticky=W, pady=2)
-    l2.grid(row=1, column=0, sticky=W, pady=2)
-=======
+
     l1.grid(row=1, column=0, sticky=W, pady=2)
     l2.grid(row=2, column=0, sticky=W, pady=2)
->>>>>>> 2dd72a2f72ce4433413a92edb20b59fade6c6e72
     l3.grid(row=3, column=0, sticky=W, pady=2)
 
     e1 = Entry()
