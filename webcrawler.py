@@ -13,8 +13,9 @@ def start_crawler():
     from getpass import getpass
     import os
     import tkinter
+    from PIL import ImageTk, Image
 
-    chrome_driver_path = '/Users/Vishal/Desktop/Custom-Web-Crawler/chromedriver'
+    chrome_driver_path = 'C:/path/chromedriver'
 
     chrome_options = Options()
     # chrome_options.add_argument('--headless')
@@ -133,13 +134,20 @@ def start_crawler():
     # CheckVar1 = IntVar()
     # C1 = tkinter.Checkbutton(text = "The target account is private", variable = CheckVar1, onvalue = 1, offvalue = 0, height=5, width = 20)
     # C1.pack()
+    p1 = PhotoImage(file='instagram.png')
+    crawler_window.iconphoto(False, p1)
+    crawler_window.title("Insta Scraper")
+    path = "insta2.png"
+    img = ImageTk.PhotoImage(Image.open(path).resize((250,70),Image.ANTIALIAS))
+    panel = Label(crawler_window, image = img)
+    panel.grid(pady=2,columnspan=2)
 
     l1 = Label(text = "Username:")
     l2 = Label(text = "Password:")
     l3 = Label(text="Target Username: ")
 
-    l1.grid(row=0, column=0, sticky=W, pady=2)
-    l2.grid(row=1, column=0, sticky=W, pady=2)
+    l1.grid(row=1, column=0, sticky=W, pady=2)
+    l2.grid(row=2, column=0, sticky=W, pady=2)
     l3.grid(row=3, column=0, sticky=W, pady=2)
 
     e1 = Entry()
@@ -150,8 +158,8 @@ def start_crawler():
 
     e2.config(show="*");
     # this will arrange entry widgets
-    e1.grid(row=0, column=1, pady=2)
-    e2.grid(row=1, column=1, pady=2)
+    e1.grid(row=1, column=1, pady=2)
+    e2.grid(row=2, column=1, pady=2)
     e3.grid(row=3, column=1, pady=2)
 
     B = tkinter.Button(text="Start Downloading", command=begin_crawling)
