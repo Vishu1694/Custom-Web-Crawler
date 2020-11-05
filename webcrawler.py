@@ -130,6 +130,12 @@ def start_crawler():
 
     crawler_window = tkinter.Tk()
 
+    C = Canvas(0, bg="blue", height=100, width=300)
+    bg = PhotoImage(file='instagram.png')
+    bg_label = Label(0, image=bg)
+    bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+    C.grid(row=0, column=0)
+
     # CheckVar1 = IntVar()
     # C1 = tkinter.Checkbutton(text = "The target account is private", variable = CheckVar1, onvalue = 1, offvalue = 0, height=5, width = 20)
     # C1.pack()
@@ -138,7 +144,7 @@ def start_crawler():
     l2 = Label(text = "Password:")
     l3 = Label(text="Target Username: ")
 
-    l1.grid(row=0, column=0, sticky=W, pady=2)
+    l1.grid(row=1, column=1, sticky=W, pady=2)
     l2.grid(row=1, column=0, sticky=W, pady=2)
     l3.grid(row=3, column=0, sticky=W, pady=2)
 
