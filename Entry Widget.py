@@ -101,7 +101,8 @@ frame_arr = []
 def start():
     # f = open("scraped-data.txt", "w")
     if var1.get() == 1:
-        f = open("scraped-data.txt", "a")
+        print('Data would be saved')
+        f = open("scraped-data.txt", "a", encoding='utf-8')
         f.write("\n\n\n <====== NEW PROJECT ======> \n\n\n")
     global webdriver
     chrome_options = Options()
@@ -122,13 +123,13 @@ def start():
                         element = page_soup.find(str(element_arr[i].get()), {"class": str(class_id_entry_arr[i].get())})
                         print(element.text)
                         if var1.get() == 1:
-                            f.write(str(element.txt))
+                            f.write(str(element.txt)+'\n')
                 if var3_arr[i].get() == 2:
                     for j in range(0, int(first_how_entry_arr[i].get())):
                         element = page_soup.find(str(element_arr[i].get()), {"id": str(class_id_entry_arr[i].get())})
                         print(element.text)
                         if var1.get() == 1:
-                            f.write(str(element.txt))
+                            f.write(str(element.txt)+'\n')
             if var2_arr[i].get() == 2:
                 if var3_arr[i].get() == 1:
                     element = page_soup.findAll(str(element_arr[i].get()), {"class": str(class_id_entry_arr[i].get())})
@@ -137,14 +138,14 @@ def start():
                 for k in range(0, len(element)):
                     print(element[k].text)
                     if var1.get() == 1:
-                        f.write(str(element[k].text))
+                        f.write(str(element[k].text)+'\n')
                 if var1.get() == 1:
                     print('<---------- Written All Elements -------->')
             print()
             print("<============= ELEMENT CHANGED =============>")
             print()
             if var1.get() == 1:
-                f.write("\n <============= ELEMENT CHANGED =============> \n ")
+                f.write("\n\n <============= ELEMENT CHANGED =============> \n\n ")
             # element = WebDriverWait(driver, 50).until(
             #     EC.presence_of_element_located((By.CLASS_NAME, 'L3NKy'))
             # )
@@ -213,7 +214,7 @@ plus_button.grid(row=3, column=1)
 start_button = Button(text='Begin Crawling', bg='green', command=start)
 start_button.grid(row=3, column=3)
 
-c1 = Checkbutton(bg="#FFE4C4", fg="#000", text='Save Crawled Data as txt', variable=var1, onvalue=1, offvalue=0)         #add command to this after creating function
+c1 = Checkbutton(bg="#FFE4C4", fg="#000", text='Save Crawled Data as txt', variable=var1)
 c1.grid(row=3, column=2)
 
 add_new_frame()
