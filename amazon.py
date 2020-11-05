@@ -14,6 +14,14 @@ img = ImageTk.PhotoImage(Image.open(path).resize((240,70),Image.ANTIALIAS))
 panel = Label(crawler_window, image = img)
 panel.grid(pady=2,columnspan=2)
 
+label = Label(text="Product Name:")
+label.grid(row=1,column=0,pady=5)
+entry1 = Entry(crawler_window)
+entry1.grid(row=1,column=1,pady=5)
+
+
+btn = Button(text="Begin Scraping!",bg='#D2EFA0')
+btn.grid(row=3,columnspan=2,pady=5)
 
 
 crawler_window.mainloop()
