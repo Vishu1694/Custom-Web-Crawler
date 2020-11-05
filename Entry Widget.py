@@ -24,9 +24,9 @@ def open_insta():
     os.system('python webcrawler.py')
 
 
-photo1 = PhotoImage(file = r"C:/Users/HP/Downloads/Custom-Web-Crawler-master/flipkart.png").subsample(10,10)
-photo2 = PhotoImage(file = r"C:/Users/HP/Downloads/Custom-Web-Crawler-master/amazon.png").subsample(10,10)
-photo3 = PhotoImage(file = r"C:/Users/HP/Downloads/Custom-Web-Crawler-master/instagram.png").subsample(10,10)
+photo1 = PhotoImage(file = r"flipkart.png").subsample(10,10)
+photo2 = PhotoImage(file = r"amazon.png").subsample(10,10)
+photo3 = PhotoImage(file = r"instagram.png").subsample(10,10)
 
 
 C = Canvas(0, bg="blue", height=0, width=0)
