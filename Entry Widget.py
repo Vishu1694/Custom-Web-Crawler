@@ -4,6 +4,13 @@ import os
 
 root = tkinter.Tk()
 root.title("CUSTOM WEB CRAWLER")
+<<<<<<< HEAD
+=======
+root.geometry('450x400')
+root.configure(bg="#f7f7f7")
+p1 = PhotoImage(file='icon.png')
+root.iconphoto(False, p1)
+>>>>>>> parent of 18494f6... Fixed few issues
 root.attributes("-transparentcolor", "red")
 # scrollbar = Scrollbar(root)
 # scrollbar.grid( sticky=E)
@@ -26,9 +33,16 @@ def open_app(app_no):
     else:
         pass
 
+<<<<<<< HEAD
 photo1 = PhotoImage(file = r"flipkart.png").subsample(10,10)
 photo2 = PhotoImage(file = r"amazon.png").subsample(10,10)
 photo3 = PhotoImage(file = r"instagram.png").subsample(10,10)
+=======
+
+photo1 = PhotoImage(file = r"C:/Users/HP/Downloads/Custom-Web-Crawler-master/flipkart.png").subsample(10,10)
+photo2 = PhotoImage(file = r"C:/Users/HP/Downloads/Custom-Web-Crawler-master/amazon.png").subsample(10,10)
+photo3 = PhotoImage(file = r"C:/Users/HP/Downloads/Custom-Web-Crawler-master/instagram.png").subsample(10,10)
+>>>>>>> parent of 18494f6... Fixed few issues
 
 
 C = Canvas(0, bg="blue", height=0, width=0)
