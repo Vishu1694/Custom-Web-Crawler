@@ -28,7 +28,7 @@ var1 = IntVar()
 
 
 def open_insta():
-    os.system('python webcrawler.py')
+    os.system('python web-crawler.py')
 
 
 photo1 = PhotoImage(file="flipkart.png").subsample(10, 10)

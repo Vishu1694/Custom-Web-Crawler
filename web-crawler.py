@@ -15,7 +15,7 @@ def start_crawler():
     import tkinter
     from PIL import ImageTk, Image
 
-    chrome_driver_path = 'C:/path/chromedriver'
+    chrome_driver_path = 'chromedriver'
 
     chrome_options = Options()
     # chrome_options.add_argument('--headless')
